@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazing Online - HR & Employment Services</title>
+    <style>
+        /* Base Styles */
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --text: #333;
+            --text-light: #7f8c8d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text);
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        h1, h2, h3, h4 {
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary);
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            color: var(--secondary);
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--secondary);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .logo {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+        
+        .tagline {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        /* Outcomes Section */
+        .outcomes {
+            background-color: var(--light);
+        }
+        
+        .outcomes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .outcome-card {
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .outcome-icon {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        /* Team Section */
+        .team-member {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .team-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: var(--light);
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--secondary);
+        }
+        
+        /* Standards Section */
+        .standards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .standard-card {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .contact h2, .contact h3 {
+            color: white;
+        }
+        
+        .contact h2:after {
+            background-color: white;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .contact-info {
+            margin-top: 40px;
+        }
+        
+        .contact-item {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">Amazing Online</div>
+            <p class="tagline">Employment & HR Services</p>
+            <p>Connecting talent with top-tier employers since 2018</p>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2>Our Offerings</h2>
+            <p>At Amazing Online, we provide extensive HR services covering various sectors and industries.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">💼</div>
+                    <h3>Sales & Marketing</h3>
+                    <p>Our agency in India focuses on connecting talent with top-tier employers, having successfully placed over 5,000 candidates since 2018. Our tailored approach blends extensive industry insights with a broad talent pool to meet your hiring needs.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">📞</div>
+                    <h3>BPO Recruitment</h3>
+                    <p>We ensure each service is supported by knowledgeable consultants who excel in matching candidate potential with client expectations.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">💻</div>
+                    <h3>IT & Tech Positions</h3>
+                    <p>We collaborate with prominent organizations to find the best tech talent for their needs.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">💰</div>
+                    <h3>Financial Sector Hiring</h3>
+                    <p>Partnering with top financial firms to match them with qualified professionals in the industry.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Outcomes Section -->
+    <section id="outcomes" class="outcomes">
+        <div class="container">
+            <h2>Hiring Outcomes</h2>
+            <p>We proudly support companies and candidates in navigating various hiring landscapes across India.</p>
+            
+            <div class="outcomes-grid">
+                <div class="outcome-card">
+                    <div class="outcome-icon">🌐</div>
+                    <h3>Explore New Careers</h3>
+                    <p>Our network spans nationally, providing localized expertise for all your hiring challenges.</p>
+                </div>
+                
+                <div class="outcome-card">
+                    <div class="outcome-icon">🔍</div>
+                    <h3>Finding Your Next Opportunity</h3>
+                    <p>Connect with us today to simplify your hiring or career journey.</p>
+                </div>
+                
+                <div class="outcome-card">
+                    <div class="outcome-icon">🚀</div>
+                    <h3>Your Path to Success</h3>
+                    <p>Your Career Starts Here!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team">
+        <div class="container">
+            <h2>Connect with Our Team</h2>
+            <p>Reach out to Amazing Online for support with your hiring process.</p>
+            
+            <div class="team-member">
+                <div class="team-photo">VM</div>
+                <h3>Mr. Vishal Maske</h3>
+                <h4>Founder</h4>
+                <p>Expert in managing large-scale projects with a focus on quality and efficiency.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Standards Section -->
+    <section id="standards">
+        <div class="container">
+            <h2>Safety and Quality Standards</h2>
+            <p>Amazing Online is committed to maintaining the highest standards of safety and quality.</p>
+            
+            <div class="standards-grid">
+                <div class="standard-card">
+                    <h3>Strict Safety Protocols</h3>
+                    <p>Ensuring the well-being of our team and clients through comprehensive safety measures and training.</p>
+                </div>
+                
+                <div class="standard-card">
+                    <h3>Quality Assurance</h3>
+                    <p>Rigorous quality checks and adherence to industry standards to guarantee exceptional results.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Let's Connect and Discuss Success</h2>
+            <p>Reach out to us for all your hiring needs and career opportunities.</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <strong>Email:</strong> <a href="mailto:services.amazingonline@gmail.com">services.amazingonline@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <strong>Phone:</strong> <a href="tel:+919595174471">+91 95951 74471</a>
+                </div>
+                <div class="contact-item">
+                    <strong>Location:</strong> Pune, India
+                </div>
+                <div class="contact-item">
+                    <strong>Website:</strong> <a href="https://amazingonline.com" target="_blank">amazingonline.com</a>
+                </div>
+            </div>
+            
+            <a href="mailto:services.amazingonline@gmail.com" class="btn" style="margin-top: 30px;">Contact Us Today</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Amazing Online. All Rights Reserved.</p>
+            <p>Renowned for creating functional and aesthetically pleasing solutions tailored to client needs.</p>
+        </div>
+    </footer>
+</body>
+</html>
